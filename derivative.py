@@ -56,10 +56,10 @@ while True:
     print("e1 {} e2 {}".format(e1.value, e2.value))
     print("m1 {} m2 {}".format(m1_speed, m2_speed))
 
-    e1_prev_error = e1_error
-    e2_prev_error = e2_error
-
     e1.reset()
     e2.reset()
 
     sleep(SAMPLETIME)
+
+    e1_prev_error = e1_error
+    e2_prev_error = e2_error
