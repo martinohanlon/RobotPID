@@ -20,6 +20,8 @@ class Encoder(object):
     def value(self):
         return self._value
 
+SAMPLETIME = 1
+
 r = Robot((10,9), (8,7)) 
 e1 = Encoder(17)
 e2 = Encoder(18)
@@ -32,4 +34,4 @@ r.value = (m1_speed, m2_speed)
 #find a sample rate
 while True:
     print("e1 {} e2 {}".format(e1.value, e2.value))
-    sleep(1)
+    sleep(SAMPLETIME)

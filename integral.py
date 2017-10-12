@@ -54,13 +54,14 @@ while True:
     m1_speed += (e1_error * KP) + (e1_prev_error * KD) + (e1_sum_error * KI)
     m2_speed += (e2_error * KP)  + (e1_prev_error * KD) + (e2_sum_error * KI)
 
-    m1_speed = clamp(m1_speed)
-    m2_speed = clamp(m2_speed)
+    m1_speed = max(min(1, m1_speed), 0)
+    m2_speed = max(min(1, m2_speed), 0)
 
     # update the robots speed
     r.value = (m1_speed, m2_speed)
 
-    print("e1 {} e2 {} m1 {} m2 {}".format(e1.value, e2.value, m1_speed, m2_speed))
+    print("e1 {} e2 {}".format(e1.value, e2.value))
+    print("m1 {} m2 {}".format(m1_speed, m2_speed))
 
     e1_prev_error = e1_error
     e2_prev_error = e2_error
