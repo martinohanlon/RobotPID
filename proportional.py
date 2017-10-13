@@ -1,4 +1,3 @@
-import threading
 from gpiozero import DigitalInputDevice, Robot
 from time import sleep
 

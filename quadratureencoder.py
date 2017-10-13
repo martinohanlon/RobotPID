@@ -1,3 +1,5 @@
+from gpiozero import DigitalInputDevice, Robot
+
 class QuadratureEncoder(object):
     """
     A simple quadrature encoder class

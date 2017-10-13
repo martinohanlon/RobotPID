@@ -1,4 +1,3 @@
-import threading
 from gpiozero import DigitalInputDevice, Robot
 from time import sleep
 
@@ -24,8 +23,8 @@ class Encoder(object):
 def clamp(value):
     return max(min(1, value), 0)
 
-SAMPLETIME = 0.5
-TARGET = 20
+SAMPLETIME = 1.0
+TARGET = 45
 KP = 0.02
 KD = 0.01
 KI = 0.005
