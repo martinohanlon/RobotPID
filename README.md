@@ -9,4 +9,4 @@ Martin O'Hanlon
 * proportional.py - proportional (P) control
 * derivative.py - proportional and derivative (PD) control
 * integral.py - proportional, integral and derivative (PID) control
-
+* mock/* - code created to test the PID implementation - left in purely for interest

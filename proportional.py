@@ -1,3 +1,4 @@
+import threading
 from gpiozero import DigitalInputDevice, Robot
 from time import sleep
 
@@ -5,7 +6,6 @@ class Encoder(object):
     def __init__(self, pin):
         self._value = 0
 
-        # setup gpiozero to call increment on each when_activated
         encoder = DigitalInputDevice(pin)
         encoder.when_activated = self._increment
         encoder.when_deactivated = self._increment
@@ -43,7 +43,6 @@ while True:
     m1_speed = max(min(1, m1_speed), 0)
     m2_speed = max(min(1, m2_speed), 0)
 
-    # update the robots speed
     r.value = (m1_speed, m2_speed)
 
     print("e1 {} e2 {}".format(e1.value, e2.value))
